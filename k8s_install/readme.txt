@@ -16,3 +16,5 @@ k8s安装步骤及注意事项
         sudo chown $(id -u):$(id -g) $HOME/.kube/config
     (7)按照网络插件（kubectl get nodes会看到master节点是notready状态）
         kubectl apply -f kube_flnnel.yml(会下载镜像并部署)
+    (8)集群加入节点，在节点执行
+        kubectl join --config= join-config.yaml
