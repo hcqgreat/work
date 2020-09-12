@@ -1,0 +1,17 @@
+<component name="ProjectDictionaryState">
+  <dictionary name="hcq">
+    <words>
+      <w>firewalld</w>
+      <w>flnnel</w>
+      <w>kube</w>
+      <w>kubeadm</w>
+      <w>kubectl</w>
+      <w>kubelet</w>
+      <w>notready</w>
+      <w>selinux</w>
+      <w>setenforce</w>
+      <w>swapoff</w>
+      <w>systemctl</w>
+    </words>
+  </dictionary>
+</component>
