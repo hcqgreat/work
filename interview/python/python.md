@@ -1,7 +1,7 @@
 # python面试大纲：
 #### 一、基础
   1. python语言特点 <br>
-  2. python内置类型（整数，浮点，布尔，字符串，list, set, dict, tupe）<br>
+  2. python内置类型（整数，浮点，布尔，字符串，list, set, dict, tuple）<br>
   3. 文件操作 <br>
   4. IO操作 <br>
   5. 多线程编程（线程锁）<br>

@@ -5,7 +5,12 @@
 
 class MySort:
     """
-        排序方法
+        五种排序方法
+        １、冒泡排序
+        ２、选择排序
+        ３、插入排序
+        ４、快速排序
+        ５、希尔排序
     """
 
     def bubble_sort(self, lst):
@@ -59,10 +64,31 @@ class MySort:
         :param lst: 
         :return: 
         """
-        mid = lst[0]
-        low = 0
-        high = len(lst) - 1
-
-        while lst[high] > mid and low < high:
-            high -= 1
-        lst[low] = lst[high]
+        if len(lst) >= 2:  # 递归入口及出口        
+            mid = lst[len(lst) // 2]  # 选取基准值，也可以选取第一个或最后一个元素        
+            left, right = [], []  # 定义基准值左右两侧的列表        
+            lst.remove(mid)  # 从原始数组中移除基准值        
+            for num in lst:
+                if num >= mid:
+                    right.append(num)
+                else:
+                    left.append(num)
+            return quick_sort(left) + [mid] + quick_sort(right)
+        else:
+            return lst
+        
+    def shell_sort(self, lst):
+        """
+            希尔排序
+        :param lst:
+        :return:
+        """
+        n = len(lst)
+        step = n // 2
+        while step > 0:
+            for cur in range(step, n):
+                i = cur
+                while i >= step and lst[i-step] > lst[i]:
+                    lst[i - step], lst[i] = lst[i], lst[i-step]
+                    i -= step
+            step = step // 2

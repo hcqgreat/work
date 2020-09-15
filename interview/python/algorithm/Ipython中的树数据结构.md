@@ -1,8 +1,8 @@
 # python中的树数据结构
 [顺序表数据结构在python中的应用](A数据机构和算法对python意味着什么.md)<br>
 [python实现单向链表数据结构及其基本方法](B顺序表数据结构在python中的应用.md)<br>
-[python实现单向循环链表数据结构及其方法](Cpython实现单向循环链表数据结构及其方法.md)<br>
-[python实现双向链表基本结构及其基本方法](Dpython实现单向链表数据结构及其基本方法.md)<br>
+[python实现单向循环链表数据结构及其方法](Dpython实现单向循环链表数据结构及其方法.md)<br>
+[python实现双向链表基本结构及其基本方法](Cpython实现单向链表数据结构及其基本方法.md)<br>
 [python实现双向循环链表基本结构及其基本方法](Epython实现双向链表基本结构及其基本方法.md)<br>
 [python实现堆栈数据结构及其基本方法](Fpython实现双向循环链表基本结构及其基本方法.md)<br>
 [Python实现双端队列数据结构及其基本方法](Gpython实现堆栈数据结构及其基本方法.md)<br>
