@@ -23,6 +23,7 @@ def binary_search(arr, target):
             return True
     return False
 
+
 if __name__ == '__main__':
     l = [1, 3, 4, 5, 6, 7, 8]
     binary_search(l, 8)
