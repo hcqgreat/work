@@ -30,4 +30,12 @@ pipeline{
         TIMEZONE = "eastern"
     }
 
+    tools{
+        gradle "gradle3.2"
+    }
+
+    parameters{
+        booleanParam(name: testBoolParam, description:boolean参数说明, defaultValue: false)
+    }
+
 }
