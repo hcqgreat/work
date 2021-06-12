@@ -1,6 +1,6 @@
-aipVersion: kubeadm.k8s.io/v1beate1
+aipVersion: kubeadm.k8s.io/v1beate2
 kind: ClusterConfigguration
-imageRepository: docker.io/dustise
-kubernetesVersion: v1.18.2
+imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers
+kubernetesVersion: v1.21.1
 networking:
   podsubnet: "192.168.0.0"
