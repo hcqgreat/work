@@ -1,4 +1,4 @@
-aipVersion: kubeadm.k8s.io/v1beate2
+aipVersion: kubeadm.k8s.io/v1beta2
 kind: ClusterConfigguration
 imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers
 kubernetesVersion: v1.21.1
