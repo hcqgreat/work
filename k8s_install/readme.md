@@ -7,7 +7,7 @@ systemctl start kubelet <br>
 3. systemctl disable firewalld, systemctl stop firewalld (关闭系统防火墙) <br>
 4. setenforce 0 或修改/etc/sysconfig/selinux中SELINUX=enforcing改为SELINUX=disabled后重启（禁用SELinux）<br>
 5. 使用kubeadm init安装master <br>
-       命令：kubeadm init kubeadm  init --kubernetes-version=v1.18.2 --pod-network-cidr=192.168.0.0/16 <br>
+       命令：sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --image-repository registry.cn-hangzhou.aliyuncs.com/google_containers  --kubernetes-version=v1.21.1 <br>
             必须指定kubernetes-version否则会按照最新去下载镜像 <br>
             pod-network-cidr指定加入集群的node网段 <br>
            kubeadm init --config=init-config.yaml <br>
