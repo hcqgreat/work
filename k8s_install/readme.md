@@ -18,16 +18,16 @@
         # This is an autoconfigured IPv6 interface  <br>
         iface enp0s3 inet6 auto <br>
 3. swapoff -a (临时关闭系统交换空间)，修改/etc/fstab文件（永久关闭系统交换空间）<br>
-4. systemctl disable firewalld, systemctl stop firewalld (关闭系统防火墙) <br>
-5. setenforce 0 或修改/etc/sysconfig/selinux中SELINUX=enforcing改为SELINUX=disabled后重启（禁用SELinux）<br>
+4. sudo apt-get install firwalld && systemctl disable firewalld, systemctl stop firewalld (关闭系统防火墙) <br>
+5. sudo apt install selinux-utils && setenforce 0 或修改/etc/sysconfig/selinux中SELINUX=enforcing改为SELINUX=disabled后重启（禁用SELinux）<br>
 6. 安装相关工具 <br>
-   sudo apt-get update && apt-get install -y apt-transport-https curl <br>
+   sudo apt-get update && sudo apt-get install -y apt-transport-https curl <br>
    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - <br>
-   apt-get install docker.io -y <br>
+   sudo apt-get install docker.io -y <br>
    curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add - <br>
    sudo tee /etc/apt/sources.list.d/kubernetes.list <<EOF 
-   deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
-   EOF <br>
+deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
+EOF <br>
    sudo apt-get update <br>
    sudo apt-get install -y kubelet kubeadm kubectl <br>
    sudo apt-mark hold kubelet kubeadm kubectl <br>
