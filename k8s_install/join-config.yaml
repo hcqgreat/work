@@ -3,6 +3,6 @@ kind: JoinConfiguration
 discovery:
   bootstrapToken:
     apiServerEndpoint: 192.168.1.200:6443
-    token: xqykxq.ugq7y2zs57e7ak6v
+    token: 7s50pk.ut8u6t91zo5phagz
     unsafeSkipCAVerification: true
-  tlsBootstrapToken: xqykxq.ugq7y2zs57e7ak6v
+  tlsBootstrapToken: 7s50pk.ut8u6t91zo5phagz

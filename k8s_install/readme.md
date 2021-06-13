@@ -47,4 +47,4 @@ systemctl start kubelet <br>
 11. 集群加入节点，在节点执行 <br>
         kubectl join --config= join-config.yaml <br>
    
-    kubeadm join 192.168.1.200:6443 --token xqykxq.ugq7y2zs57e7ak6v --discovery-token-ca-cert-hash sha256:bc63fe9e89981949f4f9e440a7ae47817bbd097246dfe2400d7e5829e5ecc914
+    kubeadm join 192.168.1.200:6443 --token 7s50pk.ut8u6t91zo5phagz --discovery-token-ca-cert-hash sha256:8cb5bb121ebd3efb7ff482b94f4c5d9dfd5fb6398b10768dff1f2c4b2fd8b7c9
