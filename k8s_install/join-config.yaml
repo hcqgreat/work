@@ -2,7 +2,7 @@ apiVersion: kubeadm.k8s.io/v1beta1
 kind: JoinConfiguration
 discovery:
   bootstrapToken:
-    apiServerEndpoint: 192.168.3.100:6443
-    token: w24ybw.6qz7jzxhzmn9v5w5
+    apiServerEndpoint: 192.168.1.200:6443
+    token: xqykxq.ugq7y2zs57e7ak6v
     unsafeSkipCAVerification: true
-  tlsBootstrapToken: w24ybw.6qz7jzxhzmn9v5w5
+  tlsBootstrapToken: xqykxq.ugq7y2zs57e7ak6v
