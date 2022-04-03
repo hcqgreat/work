@@ -2,7 +2,7 @@
 #  coding : utf-8
 #  auther : Hu Chengqiang
 
-# target, 需要安卓的充电县
+# target, 需要安卓的充电线
 
 
 class Android:
