@@ -3,10 +3,13 @@ services:
   mongo:
     image: mongo:4.2.3
     container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: hcq@
     ports:
       - '27017:27017'
     volumes:
-      - '/Users/hcq/docker/mongdb_dir/data:/data/db'
+      - '~/docker/mongdb_dir/data:/data/db'
     restart: always
 
   mysql:
@@ -15,9 +18,9 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - '/Users/hcq/docker/mysql_dir/data:/var/lib/mysql'
-      - '/Users/hcq/docker/mysql_dir/conf.d:/etc/mysql/conf.d'
-      - '/Users/hcq/docker/mysql_dir/logs:/var/log'
+      - '~/docker/mysql_dir/data:/var/lib/mysql'
+      - '~/docker/mysql_dir/conf.d:/etc/mysql/conf.d'
+      - '~/docker/mysql_dir/logs:/var/log'
     environment:
       MYSQL_ROOT_PASSWORD: 'hcq@'
     restart: always
@@ -30,17 +33,17 @@ services:
       - '8080:8080'
       - '50000:50000'
     volumes:
-      - '/Users/hcq/docker/jenkins:/var/jenkins_home'
+      - '~/docker/jenkins:/var/jenkins_home'
       - '/var/run/docker.sock:/var/run/docker.sock'
     restart: always
 
   ubuntu:
-    image: ubuntu:18.04
+    image: ubuntu:22.04
     #    build: ./add_jenkins_node/
     container_name: jenkins_service_1
     network_mode: 'host'
     volumes:
-      - '/Users/hcq/docker:/tmp/'
+      - '~/docker:/tmp/'
       - './add_jenkins_node.sh:/add_jenkins_node.sh' #进入容器执行该脚本
     command: /bin/bash
     tty: true
