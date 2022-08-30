@@ -9,7 +9,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - '/docker/mongdb_dir/data:/data/db'
+      - '/docker/mongdb_dir/data/db:/data/db'
     restart: always
 
   mysql:
@@ -18,9 +18,9 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - '/docker/mysql_dir/data:/var/lib/mysql'
-      - '/docker/mysql_dir/conf.d:/etc/mysql/conf.d'
-      - '/docker/mysql_dir/logs:/var/log'
+      - '/docker/mysql_dir/var/lib/mysql:/var/lib/mysql'
+      - '/docker/mysql_dir/etc/mysql/conf.d:/etc/mysql/conf.d'
+      - '/docker/mysql_dir/var/log:/var/log'
     environment:
       MYSQL_ROOT_PASSWORD: 'hcq@'
     restart: always
@@ -33,7 +33,7 @@ services:
       - '8080:8080'
       - '50000:50000'
     volumes:
-      - '/docker/jenkins:/var/jenkins_home'
+      - '/docker/jenkins_dir/var/jenkins_home:/var/jenkins_home'
       - '/var/run/docker.sock:/var/run/docker.sock'
     restart: always
 
@@ -43,7 +43,7 @@ services:
     container_name: jenkins_service_1
     network_mode: 'host'
     volumes:
-      - '/docker/ubuntu/tmp:/tmp'
+      - '/docker/ubuntu_dir/tmp:/tmp'
       - './add_jenkins_node.sh:/add_jenkins_node.sh' #进入容器执行该脚本
     command: /bin/bash
     tty: true
