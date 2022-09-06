@@ -26,7 +26,7 @@ services:
     restart: always
 
   jenkins:
-    image: jenkins/jenkins:latest
+    image: jenkins:2.60.3
     container_name: jenkins_master
     user: root
     ports:
