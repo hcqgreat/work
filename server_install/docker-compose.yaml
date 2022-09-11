@@ -9,7 +9,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - '/data/mongodb/data/db:/data/db'
+      - '/docker/mongodb_dir/data/db:/data/db'
     restart: always
 
   mysql:
