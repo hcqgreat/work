@@ -48,3 +48,38 @@ services:
     command: /bin/bash
     tty: true
     restart: always
+
+  gerrit:
+    image: gerritcodereview/gerrit
+    ports:
+      - "29418:29418"
+      - "80:8080"
+    depends_on:
+      - ldap
+    volumes:
+      - /docker/gerrit_dir/var/gerrit/etc:/var/gerrit/etc
+      - /docker/gerrit_dir/var/gerrit/git:/var/gerrit/git
+      - /docker/gerrit_dir/var/gerrit/db:/var/gerrit/db
+      - /docker/gerrit_dir/var/gerrit/index:/var/gerrit/index
+      - /docker/gerrit_dir/var/gerrit/cache:/var/gerrit/cache
+    environment:
+      - CANONICAL_WEB_URL=116.63.170.231
+    # command: init
+
+  ldap:
+    image: osixia/openldap
+    ports:
+      - "389:389"
+      - "636:636"
+    environment:
+      - LDAP_ADMIN_PASSWORD=secret
+    volumes:
+      - /docker/gerrit_dir/var/gerrit/ldap/var:/var/lib/ldap
+      - /docker/gerrit_dir/var/gerrit/ldap/etc:/etc/ldap/slapd.d
+
+  ldap-admin:
+    image: osixia/phpldapadmin
+    ports:
+      - "6443:443"
+    environment:
+      - PHPLDAPADMIN_LDAP_HOSTS=ldap
