@@ -72,7 +72,7 @@ services:
       - "389:389"
       - "636:636"
     environment:
-      - LDAP_ADMIN_PASSWORD=secret
+      - LDAP_ADMIN_PASSWORD=hcq@
     volumes:
       - /docker/gerrit_dir/var/gerrit/ldap/var:/var/lib/ldap
       - /docker/gerrit_dir/var/gerrit/ldap/etc:/etc/ldap/slapd.d
