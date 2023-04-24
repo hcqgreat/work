@@ -51,9 +51,10 @@ services:
 
   gerrit:
     image: gerritcodereview/gerrit
+    container_name: gerrit
     ports:
       - "29418:29418"
-      - "8089:8089"
+      - "8089:8080"
     depends_on:
       - ldap
     volumes:
