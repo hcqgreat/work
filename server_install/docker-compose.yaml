@@ -54,7 +54,7 @@ services:
     container_name: gerrit
     ports:
       - "29418:29418"
-      - "8089:8080"
+      - "80:8080"
     depends_on:
       - ldap
     volumes:
@@ -64,11 +64,13 @@ services:
       - /docker/gerrit_dir/var/gerrit/index:/var/gerrit/index
       - /docker/gerrit_dir/var/gerrit/cache:/var/gerrit/cache
     environment:
-      - CANONICAL_WEB_URL=http://116.63.170.231
+      - CANONICAL_WEB_URL=http://localhost
     # command: init
+    restart: always
 
   ldap:
     image: osixia/openldap
+    container_name: openldap
     ports:
       - "389:389"
       - "636:636"
@@ -77,10 +79,13 @@ services:
     volumes:
       - /docker/gerrit_dir/var/gerrit/ldap/var:/var/lib/ldap
       - /docker/gerrit_dir/var/gerrit/ldap/etc:/etc/ldap/slapd.d
+    restart: always
 
   ldap-admin:
     image: osixia/phpldapadmin
+    container_name: phpldapadmin
     ports:
       - "6443:443"
     environment:
       - PHPLDAPADMIN_LDAP_HOSTS=ldap
+    restart: always
