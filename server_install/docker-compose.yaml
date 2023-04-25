@@ -54,7 +54,7 @@ services:
     container_name: gerrit
     ports:
       - "29418:29418"
-      - "80:8080"
+      - "8089:8080"
     depends_on:
       - ldap
     volumes:
@@ -64,7 +64,7 @@ services:
       - /docker/gerrit_dir/var/gerrit/index:/var/gerrit/index
       - /docker/gerrit_dir/var/gerrit/cache:/var/gerrit/cache
     environment:
-      - CANONICAL_WEB_URL=http://localhost
+      - CANONICAL_WEB_URL=https://116.63.170.231/
     # command: init
     restart: always
 
