@@ -64,7 +64,7 @@ services:
       - /docker/gerrit_dir/var/gerrit/index:/var/gerrit/index
       - /docker/gerrit_dir/var/gerrit/cache:/var/gerrit/cache
     environment:
-      - CANONICAL_WEB_URL=http://116.63.170.231/
+      - CANONICAL_WEB_URL=http://116.63.170.231:8089
     # command: init
     restart: always
 
