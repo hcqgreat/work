@@ -89,3 +89,20 @@ services:
     environment:
       - PHPLDAPADMIN_LDAP_HOSTS=ldap
     restart: always
+
+  gitlab:
+    image: 'gitlab/gitlab-ee:latest'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://116.63.170.231:8090'
+        # Add any other gitlab.rb configuration here, each on its own line
+    ports:
+      - '8090:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - /docker/gitlab_dir/etc/gitlab:/etc/gitlab'
+      - /docker/gitlab_dir/var/log/gitlab:/var/log/gitlab'
+      - /docker/gitlab_dir/var/opt/gitlab:/var/opt/gitlab'
+    shm_size: '256m'
+    restart: always
