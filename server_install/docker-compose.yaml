@@ -100,7 +100,7 @@ services:
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '8090:80'
-      - '5443:443'
+      - '443:443'
       - '622:22'
     volumes:
       - /docker/gitlab_dir/etc/gitlab:/etc/gitlab'
