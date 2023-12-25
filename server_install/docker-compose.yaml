@@ -92,10 +92,11 @@ services:
 
   gitlab:
     image: 'gitlab/gitlab-ee:latest'
-    hostname: 'http://116.63.170.231:8090'
+    hostname: '116.63.170.231:8090'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://116.63.170.231:8090'
+        gitlab_rails['gitlab_shell_ssh_port'] = 622
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '8090:80'
