@@ -145,10 +145,10 @@ services:
         # 禁用 PUMA 集群模式
         puma['worker_processes'] = 0
         puma['min_threads'] = 1
-        puma['max_threads'] = 2
+        puma['max_threads'] = 1
 
         # 降低后台守护进程并发数
-        sidekiq['max_concurrency'] = 5
+        sidekiq['max_concurrency'] = 1
 
         gitlab_ci['gitlab_ci_all_broken_builds'] = false
         gitlab_ci['gitlab_ci_add_pusher'] = false
@@ -170,5 +170,5 @@ services:
       - /docker/gitlab_dir/etc/gitlab:/etc/gitlab'
       - /docker/gitlab_dir/var/log/gitlab:/var/log/gitlab'
       - /docker/gitlab_dir/var/opt/gitlab:/var/opt/gitlab'
-    shm_size: '256m'
+#    shm_size: '256m'
     restart: always
