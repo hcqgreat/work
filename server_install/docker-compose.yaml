@@ -98,6 +98,7 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://116.63.170.231:8090'
         gitlab_rails['gitlab_shell_ssh_port'] = 2224
+        gitlab_rails['initial_root_password'] = hcq@
         # Add any other gitlab.rb configuration here, each on its own line
 
 
